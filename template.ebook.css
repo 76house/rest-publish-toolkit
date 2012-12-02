@@ -1,0 +1,9 @@
+/*
+
+Additional styles from Martin Marek for displaying User manual template on ebook readers
+
+*/
+
+table.docutils th { background-color: white; color: black; }
+li p { display: inline; margin: 0; }
+li { margin: 0.4em 0; }

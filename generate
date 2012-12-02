@@ -1,0 +1,33 @@
+#!/bin/bash          
+echo "This script generates various documents from reST source"
+echo "Created by Martin Marek (http://carabana.cz)"
+
+mkdir -p output/images
+
+echo "Generating PDF..."
+rst2pdf template.rst -o template_raw.pdf -s template.sheet -c --font-path=/usr/share/fonts --smart-quotes=3 --first-page-even --repeat-table-rows -e preprocess -b1 --break-side=odd --real-footnotes --no-footnote-backlinks
+pdftk template_raw.pdf update_info metadata.txt output template.pdf owner_pw somepassword allow Printing DegradedPrinting CopyContents ScreenReaders ModifyAnnotations
+convert template.pdf images/cover.png
+
+echo "Generating HTML..."
+rst2html -q --stylesheet=template.css --no-toc-backlinks --no-footnote-backlinks --strip-comments --no-compact-lists --cloak-email-addresses template.rst > template.html
+cp `find images/ ! -name manual-cover-front.svg ! -name manual-cover-back.svg ! -name images` output/images/
+
+export AUTHOR=`grep -A1 "InfoKey: Author" metadata.txt | grep "InfoValue" | cut -f2- -d" "`
+export CREATOR=`grep -A1 "InfoKey: Creator" metadata.txt | grep "InfoValue" | cut -f2- -d" "`
+
+echo "Generating EPUB..."
+ebook-convert template.html template.epub --authors="$CREATOR" --publisher="$AUTHOR" --enable-heuristics --pretty-print --smarten-punctuation --cover=images/cover.png --extra-css=template.ebook.css --epub-flatten
+
+echo "Generating MOBI..."
+ebook-convert template.html template.mobi  --authors="$CREATOR" --publisher="$AUTHOR" --enable-heuristics --pretty-print --smarten-punctuation --cover=images/cover.png --extra-css=template.ebook.css --no-inline-toc --output-profile kindle
+
+echo "Cleanup..."
+mv template.pdf output
+mv template.html output
+mv template.epub output
+mv template.mobi output
+rm *.build_temp
+rm template_raw.pdf
+rm images/cover.png
+echo "Done."

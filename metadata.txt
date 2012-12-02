@@ -1,0 +1,8 @@
+InfoKey: Title
+InfoValue: My first application
+InfoKey: Author
+InfoValue: Some company
+InfoKey: Creator
+InfoValue: Some author
+InfoKey: Subject
+InfoValue: User manual

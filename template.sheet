@@ -1,0 +1,251 @@
+{
+  "embeddedFonts" : [
+    [ "DroidSerif-Regular.ttf", "DroidSerif-Bold.ttf", "DroidSerif-Italic.ttf", "DroidSerif-BoldItalic.ttf" ],
+    [ "DroidSans.ttf", "DroidSans-Bold.ttf", "DroidSans.ttf", "DroidSans-Bold.ttf" ],
+    [ "DroidSansMono.ttf", "DroidSansMono.ttf", "DroidSansMono.ttf", "DroidSansMono.ttf" ]
+  ],
+
+  "fontsAlias" : {
+    "stdFont": "Droid Serif",
+    "stdSerif": "Droid Serif",
+    "stdSerif-Bold": "Droid Serif-Bold",
+    "stdSans": "Droid Sans",
+    "stdSans-Bold": "Droid Sans-Bold",
+    "stdMono": "Droid Sans Mono",
+    "stdMono-Bold": "Droid Sans Mono-Bold"
+  },
+
+  "pageSetup" : {
+    "size": "A5",
+    "margin-top": "1.1cm",
+    "margin-bottom": "1cm",
+    "margin-left": "1.5cm",
+    "margin-right": "1.5cm",
+    "margin-gutter": "-0.5cm",
+    "firstTemplate": "coverPageFront"
+  },
+
+  "pageTemplates" : {
+    "coverPageFront": {
+      "frames": [["0cm", "0cm", "100%", "25%"]],
+      "background": "manual-cover-front.pdf",
+      "showHeader" : false,
+      "showFooter" : false
+    },
+    "coverPageBack": {
+      "frames": [["0cm", "0cm", "100%", "25%"]],
+      "background": "manual-cover-back.pdf",
+      "showHeader" : false,
+      "showFooter" : false
+    },
+    "oneColumn": {
+      "showHeader" : false
+    },
+    "twoColumn": {
+      "showHeader" : false
+    },
+    "threeColumn": {
+      "showHeader" : false
+    }
+  },
+
+  "linkColor": "#80a0c0",
+
+  "styles" : [
+    ["base" , {
+      "kerning": true
+    }],
+    ["bodytext" , {
+      "fontSize": "9pt",
+      "leading": 13,
+      "alignment": "justify",
+      "hyphenation": true
+    }],
+    ["sidebar" , {
+      "fontName": "stdSerif",
+      "fontSize": "9pt",
+      "backColor": "#f2f2f3",
+      "borderColor": "#D8D8D8",
+      "borderWidth": 0.3,
+      "borderPadding": 10,
+      "spaceBefore": 12,
+      "spaceAfter": 12
+    }],
+    ["admonition" , {
+      "fontName": "stdSerif",
+      "fontSize": "9pt",
+      "backColor": "#f2f2f3",
+      "borderColor": "#D8D8D8",
+      "borderWidth": 0.3,
+      "borderPadding": 10,
+      "spaceBefore": 12,
+      "spaceAfter": 12
+    }],
+    ["tbleft" , {
+      "fontSize": "8.5pt",
+      "parent": "bodytext"
+    }],
+    ["tbright" , {
+      "fontSize": "8.5pt",
+      "parent": "bodytext",
+      "alignment": "right"
+    }],
+    ["literal" , {
+      "fontSize": "8pt"
+    }],
+    ["toc1" , {
+      "fontName": "stdSerif-Bold"
+    }],
+    ["table" , {
+      "borderColor": "#6080a0",
+      "spaceBefore": 12,
+      "spaceAfter": 9,
+      "commands": [
+        ["VALIGN", [ 0, 0 ], [ -1, -1 ], "TOP"],
+        ["INNERGRID", [ 0, 0 ], [ -1, -1 ], 0.25, "#80a0c0"],
+        ["ROWBACKGROUNDS", [0, 0], [-1, -1], ["white", "#fcfcca"]],
+        ["BOX", [ 0, 0 ], [ -1, -1 ], 0.25, "#6080a0"]
+      ]
+    }],
+    ["table-heading" , {
+      "fontSize": "8.5pt",
+      "parent": "bodytext",
+      "textColor": "white",
+      "backColor": "#6080a0",
+      "alignment": "left"
+    }],
+    ["table-body" , {
+      "fontSize": "8.5pt",
+      "parent": "bodytext"
+    }],
+    ["right", {
+      "parent": "bodytext",
+      "alignment": "right"
+    }],
+    ["centered", {
+      "parent": "bodytext",
+      "alignment": "center"
+    }],
+    ["footertable" , {
+      "parent" : "table",
+      "fontSize": "80%",
+      "commands": []
+    }],
+    ["heading" , {
+      "textColor": "#70a0d0"
+    }],
+    ["heading1" , {
+      "spaceBefore":24,
+      "spaceAfter":24,
+      "keepWithNext": true,
+      "fontName": "stdSans",
+      "fontSize": "240%"
+    }],
+    ["heading2" , {
+      "spaceBefore":18,
+      "keepWithNext": true,
+      "fontName": "stdSans",
+      "fontSize": "180%"
+    }],
+    ["heading3" , {
+      "spaceBefore":12,
+      "keepWithNext": true,
+      "fontName": "stdSans",
+      "fontSize": "140%"
+    }],
+    ["heading4" , {
+      "spaceBefore":12,
+      "keepWithNext": true,
+      "fontName": "stdBold"
+    }],
+    ["title" , {
+      "textColor": "white",
+      "alignment": "left",
+      "leftIndent": 16,
+      "rightIntent": 10,
+      "fontName": "stdSans",
+      "fontSize": "240%"
+    }],
+    ["subtitle" , {
+      "spaceBefore": 6,
+      "alignment": "left",
+      "fontName": "stdSans",
+      "fontSize": "50%",
+      "textColor": "#f2f2f3"
+    }],
+    ["code" , {
+      "backColor": "#f2f2f3",
+      "borderColor": "#D8D8D8",
+      "borderWidth": 0.3,
+      "borderPadding": 10,
+      "spaceBefore": 12,
+      "spaceAfter": 12
+    }],
+    ["cover" , {
+      "parent": "bodytext",
+      "textColor": "#f2f2f3",
+      "leftIntent": 16,
+      "rightIntent": 16
+    }],
+    ["author" , {
+      "parent": "cover",
+      "textColor": "#f2f2f3"
+    }],
+    ["image" , {
+      "spaceBefore":12,
+      "spaceAfter": 12
+    }],
+    ["figure" , {
+      "spaceBefore":24,
+      "commands": [
+        ["BOX", [ 0, 0 ], [ 0, 0 ], 0.5, "#B0B0B8"],
+        ["TOPPADDING", [ 0, 0 ], [ 0, 0 ], 1 ],
+        ["BOTTOMPADDING", [ 0, 0 ], [ 0, 0 ], 1 ],
+        ["LEFTPADDING", [ 0, 0 ], [ 0, 0 ], 1 ],
+        ["RIGHTPADDING", [ 0, 0 ], [ 0, 0 ], 1 ],
+        ["TOPPADDING", [ 0, 1 ], [ 0, 1 ], 9 ],
+        ["BOTTOMPADDING", [ 0, 1 ], [ 0, 1 ], 12 ]
+      ]
+    }],
+    ["figure-caption" , {
+      "parent": "bodytext",
+      "fontName": "stdSans",
+      "fontSize": "8.5pt",
+      "textColor": "#404050"
+    }],
+    ["bullet-list" , {
+      "fontSize": "8.9pt",
+      "spaceBefore":6,
+      "spaceAfter": 6
+    }],
+    ["bullet-list-item" , {
+      "fontSize": "8.9pt"
+    }],
+    ["item-list" , {
+      "fontSize": "8.9pt",
+      "spaceBefore":6,
+      "spaceAfter": 6
+    }],
+    ["item-list-item" , {
+      "fontSize": "8.9pt"
+    }],
+    ["field-list" , {
+      "colWidths": [4cm, null]
+    }],
+    ["option-list" , {
+      "colWidths": [4cm, null]
+    }],
+    ["red" , {
+      "textColor": "#B00808"
+    }],
+    ["endnote" , {
+      "fontSize": "8pt",
+      "colWidths": [1cm, null],
+      "commands": [
+        ["VALIGN", [ 0, 0 ], [ -1, -1 ], "TOP" ],
+        ["TOPPADDING", [ 0, 0 ], [ -1, 0 ], 6 ],
+        ["LINEABOVE", [ 0, 0 ], [ -1, 0 ], 0.5, "#B0B0B8"]
+      ]
+    }]
+  ]  
+}
